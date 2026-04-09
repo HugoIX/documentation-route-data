@@ -1,41 +1,67 @@
-# Website
+# CoderDocs
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+**CoderDocs** es una plataforma educativa construida con [Docusaurus](https://docusaurus.io/). Este espacio está diseñado para centralizar contenido de diferentes **rutas de aprendizaje** y  **conceptos técnicos** .
 
-## Installation
+## 🚀 Instalación
 
-```bash
-yarn
+Instala las dependencias del proyecto usando el gestor de paquetes de Node:
+
+**Bash**
+
+```
+npm install
 ```
 
-## Local Development
+## 💻 Desarrollo Local
 
-```bash
-yarn start
+Para iniciar el servidor de desarrollo:
+
+**Bash**
+
+```
+npm run start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+El sitio estará disponible en `http://localhost:3000`. Los cambios en los archivos `.md` o `.mdx` se actualizarán automáticamente.
 
-## Build
+## 🏗️ Construcción (Build)
 
-```bash
-yarn build
+Para generar los archivos estáticos listos para producción:
+
+**Bash**
+
+```
+npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## 📁 Estructura de Carpetas de CoderDocs
 
-## Deployment
+Para mantener tus rutas de aprendizaje y conceptos organizados, así es como se estructura el proyecto:
 
-Using SSH:
+**Plaintext**
 
-```bash
-USE_SSH=true yarn deploy
+```
+coderdocs/
+├── docs/                # Aquí vive el corazón de tu contenido
+│   ├── modulo1-python/   # Carpeta para una ruta específica
+│   │   ├── conceptos.md
+│   │   └── intro.md
+│   ├── modulo2-javascript/    # Otra ruta de aprendizaje
+│   │   └── nodejs.md
+│   └── intro.md         # Página de bienvenida a la documentación
+├── blog/                # (Opcional) Para anuncios o tutoriales cortos
+├── src/
+│   ├── css/             # Estilos personalizados (custom.css)
+│   └── components/      # Componentes de React para docs interactivos
+├── static/              # Imágenes, PDFs y otros recursos estáticos
+├── docusaurus.config.js # Configuración principal (Nombre, logo, Navbar)
+├── sidebars.js          # Aquí defines el orden de tus rutas y temas
+├── package.json         # Dependencias y scripts de NPM
+└── README.md            # Este archivo
 ```
 
-Not using SSH:
+### Notas clave para tu contenido:
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+* **`docs/`** : Es donde crearás las subcarpetas para cada "Ruta". Docusaurus generará automáticamente la jerarquía basada en esta estructura.
+* **`docusaurus.config.js`** : Asegúrate de cambiar el `title` a **"CoderDocs"** y configurar el `navbar` para que apunte a tus rutas principales.
+* **`sidebars.js`** : Si quieres un control total sobre qué temas aparecen primero en el menú lateral, deberás listarlos aquí.
